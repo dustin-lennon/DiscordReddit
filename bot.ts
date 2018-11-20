@@ -1,6 +1,7 @@
 require('dotenv').config()
 
 import { AkairoClient } from 'discord-akairo'
+import * as moment from 'moment'
 
 // Reddit Configuration
 const Snoowrap = require('snoowrap')
@@ -16,7 +17,7 @@ const discordClient = new AkairoClient({
   listenerDirectory: './listeners'
 }, {
     disableEveryone: true
-})
+  })
 
 discordClient.build()
 
@@ -36,6 +37,8 @@ function readFfxivSubreddit(channel) {
     refreshToken: process.env.REDDIT_REFRESH_TOKEN
   })
 
+  r.config({ debug: true })
+
   const redditClient = new Snoostorm(r)
 
   const submissionStream = redditClient.SubmissionStream({
@@ -44,15 +47,34 @@ function readFfxivSubreddit(channel) {
   })
 
   submissionStream.on('submission', (post) => {
+    const timestamp = moment.unix(post.created_utc).format('YYYY-MM-DD[T]HH:mm:ss.SSS[Z]')
+
+    console.log('timestamp: ', timestamp)
+
+    // Take a look at post.selftext and truncate if longer than 1024 characters
+    String.prototype.trunc = function (n) {
+      return this.substr(0, n - 1) + (this.length > n ? '...' : '');
+    }
+
+    console.log(post.selftext.trunc(500))
+
     channel.send({
       embed: {
-        title: `${post.title}`,
+        title: `${post.link_flair_text} ${post.title}`,
         url: `${post.url}`,
-        timestamp: 
+        color: 2993093,
+        timestamp: `${timestamp}`,
+        author: {
+          name: `${post.author.name}`
+        },
+        fields: [
+          {
+            name: 'Contents',
+            value: `${post.selftext.trunc(500)}`
+          }
+        ]
       }
     })
-    console.log('Post Info: ', post)
-    console.log(`New submission by ${post.author.name}`)
   })
 }
 
