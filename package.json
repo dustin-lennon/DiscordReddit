@@ -1,0 +1,25 @@
+{
+  "name": "discordreddit",
+  "version": "1.0.0",
+  "description": "FFXIV Subreddit Bot for Discord",
+  "main": "bot.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Discord",
+    "FFXIV",
+    "Reddit"
+  ],
+  "author": "Dustin Lennon (Demonic Pagan)",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^10.12.9",
+    "discord-akairo": "^7.5.5",
+    "discord.js": "^11.4.2",
+    "dotenv": "^6.1.0",
+    "snoostorm": "0.0.5",
+    "snoowrap": "^1.15.2",
+    "ts-node": "^7.0.1"
+  }
+}
