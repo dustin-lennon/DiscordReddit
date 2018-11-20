@@ -18,6 +18,7 @@
     "discord-akairo": "^7.5.5",
     "discord.js": "^11.4.2",
     "dotenv": "^6.1.0",
+    "moment": "^2.22.2",
     "snoostorm": "0.0.5",
     "snoowrap": "^1.15.2",
     "ts-node": "^7.0.1"
