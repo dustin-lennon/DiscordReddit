@@ -4,8 +4,8 @@ import { AkairoClient } from 'discord-akairo'
 import * as moment from 'moment'
 
 // Reddit Configuration
-const Snoowrap = require('snoowrap')
 const Snoostorm = require('snoostorm')
+const r = require('./utils/redditUtil')
 
 // Discord configuration
 const discordClient = new AkairoClient({
@@ -30,16 +30,7 @@ discordClient.login(process.env.DISCORD_CLIENT_TOKEN).then(() => {
 })
 
 function readFfxivSubreddit(channel) {
-  const r = new Snoowrap({
-    userAgent: 'discordjs:com.stelth2000inc.ffxivreddit:v1.0.0 (by /u/demonicpagan)',
-    clientId: process.env.REDDIT_CLIENT_ID,
-    clientSecret: process.env.REDDIT_CLIENT_SECRET,
-    refreshToken: process.env.REDDIT_REFRESH_TOKEN
-  })
-
-  r.config({ debug: true })
-
-  const redditClient = new Snoostorm(r)
+  const redditClient = new Snoostorm(r.redditClient)
 
   const submissionStream = redditClient.SubmissionStream({
     subreddit: 'ffxiv',
@@ -47,15 +38,7 @@ function readFfxivSubreddit(channel) {
   })
 
   submissionStream.on('submission', (post) => {
-    const timestamp = moment.unix(post.created_utc).format('YYYY-MM-DD[T]HH:mm:ss.SSS[Z]')
-
-    console.log('timestamp: ', timestamp)
-
-    // Take a look at post.selftext and truncate if longer than 1024 characters
-    String.prototype.trunc = function (n) {
-      return this.substr(0, n - 1) + (this.length > n ? '...' : '');
-    }
-
+    console.log('text: ', post.selftext)
     console.log(post.selftext.trunc(500))
 
     channel.send({
@@ -63,7 +46,7 @@ function readFfxivSubreddit(channel) {
         title: `${post.link_flair_text} ${post.title}`,
         url: `${post.url}`,
         color: 2993093,
-        timestamp: `${timestamp}`,
+        timestamp: `${moment.unix(post.created_utc).format()}`,
         author: {
           name: `${post.author.name}`
         },
@@ -77,10 +60,3 @@ function readFfxivSubreddit(channel) {
     })
   })
 }
-
-
-
-
-
-
-
