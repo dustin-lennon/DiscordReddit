@@ -4,13 +4,13 @@ const r = require('../utils/redditUtil')
 
 module.exports = class extends Command {
   constructor() {
-    super('hot', {
-      aliases: ['hot', 'trending']
+    super('new', {
+      aliases: ['new']
     })
   }
 
   async exec(message) {
-    await r.redditClient.getSubreddit('ffxiv').getHot({ limit: 10 }).map(post => {
+    await r.redditClient.getSubreddit('ffxiv').getNew({ limit: 10 }).map(post => {
       if (post.selftext === '' && (post.post_hint === 'image' || post.post_hint === 'link')) {
         const imgUrl = (typeof post.preview === 'undefined') ? '' : post.preview.images[0].source.url
         // const title = ((post.link_flair_text === 'null') || (post.link_flair_text === '')) ? `${post.title.trunc(225)}` : `${post.link_flair_text} ${post.title.trunc(225)}`

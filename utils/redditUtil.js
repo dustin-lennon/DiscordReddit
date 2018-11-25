@@ -12,6 +12,8 @@ const r = new Snoowrap({
   refreshToken: process.env.REDDIT_REFRESH_TOKEN
 })
 
+r.config({ requestDelay: 2000, continueAfterRatelimitError: true, debug: true })
+
 module.exports = {
   redditClient: r
 }
