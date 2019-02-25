@@ -1,8 +1,9 @@
 require('dotenv').config()
 
-import { AkairoClient } from 'discord-akairo'
-import * as moment from 'moment'
-import * as SQLite from 'better-sqlite3'
+const { AkairoClient } = require('discord-akairo')
+const moment = require('moment')
+
+// import * as SQLite from 'better-sqlite3'
 
 // Reddit Configuration
 const Snoostorm = require('snoostorm')
