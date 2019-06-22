@@ -23,7 +23,7 @@
     "erlpack": "github:discordapp/erlpack",
     "libsodium-wrappers": "^0.7.3",
     "moment": "^2.23.0",
-    "node-gyp": "^3.8.0",
+    "node-gyp": "^5.0.1",
     "sequelize": "^5.8.11",
     "snoostorm": "0.0.5",
     "snoowrap": "^1.15.2",
