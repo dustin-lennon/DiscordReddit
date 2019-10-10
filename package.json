@@ -21,12 +21,21 @@
     "discord.js": "^11.5.1",
     "dotenv": "^6.2.0",
     "erlpack": "github:discordapp/erlpack",
+<<<<<<< HEAD
     "libsodium-wrappers": "^0.7.5",
     "moment": "^2.24.0",
     "node-gyp": "^5.0.5",
     "sequelize": "^5.19.5",
     "snoostorm": "^1.2.2",
     "snoowrap": "^1.20.0",
+=======
+    "libsodium-wrappers": "^0.7.3",
+    "moment": "^2.23.0",
+    "node-gyp": "^5.0.1",
+    "sequelize": "^5.15.1",
+    "snoostorm": "0.0.5",
+    "snoowrap": "^1.15.2",
+>>>>>>> 56ff09ab6ee8213f440eeda2721622b542b5176a
     "sqlite": "^2.9.1",
     "ts-node": "^7.0.1",
     "typescript": "^3.6.4",
