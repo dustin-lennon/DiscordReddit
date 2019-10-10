@@ -15,25 +15,25 @@
   "license": "ISC",
   "dependencies": {
     "@discordjs/uws": "^11.149.1",
-    "better-sqlite3": "^5.2.1",
+    "better-sqlite3": "^5.4.3",
     "bufferutil": "^4.0.1",
-    "discord-akairo": "^7.5.5",
-    "discord.js": "^11.4.2",
+    "discord-akairo": "^7.5.6",
+    "discord.js": "^11.5.1",
     "dotenv": "^6.2.0",
     "erlpack": "github:discordapp/erlpack",
-    "libsodium-wrappers": "^0.7.3",
-    "moment": "^2.23.0",
-    "node-gyp": "^5.0.1",
-    "sequelize": "^5.8.11",
-    "snoostorm": "0.0.5",
-    "snoowrap": "^1.15.2",
+    "libsodium-wrappers": "^0.7.5",
+    "moment": "^2.24.0",
+    "node-gyp": "^5.0.5",
+    "sequelize": "^5.19.5",
+    "snoostorm": "^1.2.2",
+    "snoowrap": "^1.20.0",
     "sqlite": "^2.9.1",
     "ts-node": "^7.0.1",
-    "typescript": "^3.2.2",
-    "uws": "^9.14.0"
+    "typescript": "^3.6.4",
+    "uws": "^9.148.0"
   },
   "devDependencies": {
-    "@types/node": "^10.12.18"
+    "@types/node": "^10.14.21"
   },
   "repository": {}
 }
