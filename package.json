@@ -4,7 +4,9 @@
   "description": "FFXIV Subreddit Bot for Discord",
   "main": "bot.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "keywords": [
     "Discord",
@@ -30,10 +32,12 @@
     "sqlite": "^2.9.1",
     "ts-node": "^7.0.1",
     "typescript": "^3.6.4",
-    "uws": "^9.148.0"
+    "uws": "^9.148.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@types/node": "^10.14.21"
   },
-  "repository": {}
+  "repository": {},
+  "snyk": true
 }
