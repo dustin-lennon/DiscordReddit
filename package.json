@@ -22,7 +22,7 @@
     "dotenv": "^6.2.0",
     "erlpack": "github:discordapp/erlpack",
     "libsodium-wrappers": "^0.7.5",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "node-gyp": "^5.0.5",
     "sequelize": "^5.19.5",
     "snoostorm": "^1.2.2",
