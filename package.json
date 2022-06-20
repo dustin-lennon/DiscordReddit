@@ -24,7 +24,7 @@
     "libsodium-wrappers": "^0.7.5",
     "moment": "^2.24.0",
     "node-gyp": "^5.0.5",
-    "sequelize": "^5.19.5",
+    "sequelize": "^6.19.1",
     "snoostorm": "^1.2.2",
     "snoowrap": "^1.20.0",
     "sqlite": "^2.9.1",
